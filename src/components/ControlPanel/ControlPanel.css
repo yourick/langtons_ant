@@ -1,0 +1,174 @@
+/* START ant panel base */
+.ant-panel {
+    position: relative;
+    z-index: 1;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 1rem;
+    background: var(--bs-light);
+    box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.5);
+}
+.ant-panel .form-field,
+.ant-panel .form-control,
+.ant-panel .form-select,
+.ant-panel .btn-group,
+.ant-step-panel .btn {
+    flex-grow: 1;
+}
+.ant-panel .form-select {
+    width: 100%;
+}
+/* END ant panel base */
+
+/* START ant scale subpanel */
+.ant-scale-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem;
+}
+.ant-scale-panel .btn {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.ant-scale-buttons-panel .btn {
+    min-width: 2.375rem;
+}
+.ant-scale-number {
+    font-size: 0.875rem;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+    color: var(--bs-white);
+}
+/* END ant scale subpanel */
+
+/* START ant focus subpanel */
+.ant-focus-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 1rem;
+}
+.ant-focus-panel .btn {
+    position: relative;
+    padding: 0.125rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.ant-focus-panel .ant-crosshair-icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+.ant-focus-panel .ant-runner-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: -0.5625rem 0 0 -0.5625rem;
+}
+.ant-focus-panel .ant-crosshair-icon img,
+.ant-focus-panel .ant-runner-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* END ant focus subpanel */
+
+/* START ant other subpanels */
+.ant-data-panel,
+.ant-action-panel,
+.ant-main-panel,
+.ant-step-panel,
+.ant-add-step-panel {
+    flex-direction: column !important;
+}
+.ant-data-panel > .vr,
+.ant-action-panel > .vr,
+.ant-main-panel > .vr,
+.ant-step-panel > .vr,
+.ant-add-step-panel > .vr {
+    display: none;
+}
+.ant-step-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* END ant other subpanels */
+
+/* START ant panel modifiers */
+.ant-panel-hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: none;
+    box-shadow: none;
+}
+.ant-panel-hidden hr,
+.ant-panel-hidden .ant-data-panel,
+.ant-panel-hidden .ant-action-panel {
+    display: none;
+}
+.ant-panel-hidden .ant-mode-panel .btn {
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.ant-panel-reduced .ant-data-panel,
+.ant-panel-reduced .ant-data-panel + hr,
+.ant-panel-reduced .ant-add-step-panel > .vr,
+.ant-panel-reduced .ant-add-step-buttons-panel {
+    display: none;
+}
+/* END ant panel modifiers */
+
+/* START ant panel screen breakpoints */
+@media screen and (min-width: 460px) {
+    .ant-panel .form-field,
+    .ant-panel .form-control,
+    .ant-panel .form-select,
+    .ant-panel .btn-group,
+    .ant-step-panel .btn {
+        flex-grow: 0;
+    }
+    .ant-panel .form-select {
+        width: auto;
+    }
+    .ant-main-panel {
+        flex-direction: row !important;
+    }
+    .ant-main-panel > .vr {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .ant-data-panel,
+    .ant-add-step-panel, 
+    .ant-panel-reduced .ant-step-panel {
+        flex-direction: row !important;
+    }
+    .ant-data-panel > .vr,
+    .ant-add-step-panel > .vr,
+    .ant-panel-reduced .ant-step-panel > .vr {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .ant-step-panel,
+    .ant-panel-reduced .ant-action-panel {
+        flex-direction: row !important;
+    }
+    .ant-step-panel > .vr,
+    .ant-panel-reduced .ant-action-panel > .vr {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .ant-action-panel {
+        flex-direction: row !important;
+    }
+    .ant-action-panel > .vr {
+        display: inline-block;
+    }
+}
+/* END ant panel screen breakpoints */

@@ -1,0 +1,96 @@
+/* START ant base */
+html,
+body {
+    height: 100%;
+}
+.ant-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+/* END ant base */
+
+/* START ant viewport */
+.ant-viewport {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: var(--bs-gray);
+}
+.ant-holder {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+    font-size: 0.625rem;
+}
+/* END ant viewport */
+
+/* START ant board */
+.ant-board {
+    position: relative;
+    flex: 0 0 auto;
+    display: table;
+    margin: 0 auto;
+    user-select: none;
+    font-size: 1em;
+}
+.ant-board-dummy-cells:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 4.2em 4.2em var(--bs-gray);
+}
+.ant-grid {
+    display: table;
+}
+.ant-grid-row {
+    display: flex;
+}
+.ant-grid-cell {
+    position: relative;
+    flex: 0 0 auto;
+    width: 2em;
+    min-width: 2em;
+    max-width: 2em;
+    height: 2em;
+    min-height: 2em;
+    max-height: 2em;
+    box-sizing: content-box;
+    border-right: 0.1em solid var(--bs-gray-400);
+    border-bottom: 0.1em solid var(--bs-gray-400);
+    background: var(--bs-gray);
+}
+.ant-grid-cell:first-child {
+    border-left: 0.1em solid var(--bs-gray-400);
+}
+.ant-grid-row:first-child .ant-grid-cell {
+    border-top: 0.1em solid var(--bs-gray-400);
+}
+.ant-grid-cell-inverted {
+    background: var(--bs-white);
+}
+.ant-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    padding: 0.1em;
+}
+.ant-icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/* END ant board */
