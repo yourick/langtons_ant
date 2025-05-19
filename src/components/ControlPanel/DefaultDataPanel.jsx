@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Stack, Modal, Form, Button } from 'react-bootstrap';
+import { DataContext } from '../../DataContext';
 import dataList from '../../data';
 
-function DefaultDataPanel({ onSetData, defaultData, onSetDefaultData, isRunning }) {
+function DefaultDataPanel({ isRunning }) {
     const [showAbout, setShowAbout] = useState(false);
+
+    const {setData, defaultData, setDefaultData} = useContext(DataContext);
 
     function handleCloseAbout() {
         setShowAbout(false);
@@ -20,8 +23,8 @@ function DefaultDataPanel({ onSetData, defaultData, onSetDefaultData, isRunning 
                     <Form.Label className="mb-0">Initial configuration:</Form.Label>
                     <Form.Select disabled={isRunning} value={defaultData} onChange={(e) => {
                         let value = e.target.value;
-                        onSetDefaultData(value);
-                        onSetData(dataList[value]);
+                        setDefaultData(value);
+                        setData(dataList[value]);
                     }}>
                         {dataList.map((data, i) => {
                             return (

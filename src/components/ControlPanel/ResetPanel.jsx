@@ -1,9 +1,15 @@
+import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import { DataContext } from '../../DataContext';
 import dataList from '../../data';
 
-function ResetPanel({ onSetData, defaultData, step, isRunning }) {
+function ResetPanel({ isRunning }) {
+    const {data, setData, defaultData} = useContext(DataContext);
+
+    const {step} = data;
+
     function handleClick() {
-        onSetData(dataList[defaultData]);
+        setData(dataList[defaultData]);
     }
 
     return (

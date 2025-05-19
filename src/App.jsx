@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { DataContext } from './DataContext';
 import Layout from './components/Layout';
 import Grid from './components/Grid';
 import dataList from './data';
@@ -10,9 +11,11 @@ function App() {
     const dummyCells = 4;
 
     return (
-        <Layout onSetData={setData} defaultData={defaultData} onSetDefaultData={setDefaultData} step={data.step} dummyCells={dummyCells} ant={ant}>
-            <Grid data={data} dummyCells={dummyCells} ant={ant}/>
-        </Layout>
+        <DataContext value={{data, setData, defaultData, setDefaultData}}>
+            <Layout dummyCells={dummyCells} ant={ant}>
+                <Grid dummyCells={dummyCells} ant={ant}/>
+            </Layout>
+        </DataContext>
     );
 }
 

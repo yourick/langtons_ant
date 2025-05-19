@@ -1,15 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Stack, Form, Button } from 'react-bootstrap';
+import { DataContext } from '../../DataContext';
 import dataList from '../../data';
 
-function MoveToStepPanel({ onSetData, defaultData, onHandleMove, isRunning }) {
+function MoveToStepPanel({ onHandleMove, isRunning }) {
     const [stepNumber, setStepNumber] = useState('');
+
+    const {setData, defaultData} = useContext(DataContext);
 
     function handleSubmit(e) {
         e.preventDefault();
         if (stepNumber !== '') {
             setStepNumber('');
-            onSetData(dataList[defaultData]);
+            setData(dataList[defaultData]);
             onHandleMove(Number(stepNumber));
         }
     }
