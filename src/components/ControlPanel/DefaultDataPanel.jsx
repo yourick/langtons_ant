@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Stack, Modal, Form, Button } from 'react-bootstrap';
-import dataList from './../../data';
+import dataList from '../../data';
 
 function DefaultDataPanel({ onSetData, defaultData, onSetDefaultData, isRunning }) {
     const [showAbout, setShowAbout] = useState(false);

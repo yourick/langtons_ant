@@ -8,7 +8,7 @@ import ResetPanel from './ResetPanel';
 import RunStopPanel from './RunStopPanel';
 import MoveToStepPanel from './MoveToStepPanel';
 import AddStepPanel from './AddStepPanel';
-import move from './../../utils/move';
+import move from '../../utils/move';
 import './ControlPanel.css';
 
 function ControlPanel({ onSetData, defaultData, onSetDefaultData, step, scale, onSetScale, viewport, ant }) {

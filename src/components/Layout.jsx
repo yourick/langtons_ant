@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react';
-import ControlPanel from './../ControlPanel/ControlPanel';
+import ControlPanel from './ControlPanel/ControlPanel';
+import './Layout.css';
 
-function Layout({ onSetData, defaultData, onSetDefaultData, step, gridOutput, dummyCells, ant }) {
+function Layout({ onSetData, defaultData, onSetDefaultData, step, dummyCells, ant, children }) {
     const [scale, setScale] = useState(1);
     const viewport = useRef(null);
 
@@ -12,7 +13,7 @@ function Layout({ onSetData, defaultData, onSetDefaultData, step, gridOutput, du
             <div ref={viewport} className="ant-viewport">
                 <div className="ant-holder">
                     <div className={'ant-board' + (dummyCells > 0 ? ' ant-board-dummy-cells' : '')} style={{fontSize: scale + 'em'}}>
-                        {gridOutput}
+                        {children}
                     </div>
                 </div>
             </div>

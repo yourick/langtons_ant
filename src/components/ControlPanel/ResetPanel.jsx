@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import dataList from './../../data';
+import dataList from '../../data';
 
 function ResetPanel({ onSetData, defaultData, step, isRunning }) {
     function handleClick() {

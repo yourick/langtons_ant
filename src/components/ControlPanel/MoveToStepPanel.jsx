@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Stack, Form, Button } from 'react-bootstrap';
-import dataList from './../../data';
+import dataList from '../../data';
 
 function MoveToStepPanel({ onSetData, defaultData, onHandleMove, isRunning }) {
     const [stepNumber, setStepNumber] = useState('');
