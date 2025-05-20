@@ -4,7 +4,7 @@ function ModePanel({ isHidden, onSetIsHidden, isReduced, onSetIsReduced }) {
     return (
         <Stack direction="horizontal" gap="3" className="ant-mode-panel">
             {isHidden ? (
-                <Button variant="light" onClick={() => onSetIsHidden(false)}>Show panel</Button>
+                <Button variant="secondary" onClick={() => onSetIsHidden(false)}>Show panel</Button>
             ) : (
                 <>
                     <Button variant="secondary" onClick={() => onSetIsHidden(true)}>Hide panel</Button>

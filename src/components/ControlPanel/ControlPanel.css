@@ -96,20 +96,10 @@
 /* END ant other subpanels */
 
 /* START ant panel modifiers */
-.ant-panel-hidden {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: none;
-    box-shadow: none;
-}
 .ant-panel-hidden hr,
 .ant-panel-hidden .ant-data-panel,
 .ant-panel-hidden .ant-action-panel {
     display: none;
-}
-.ant-panel-hidden .ant-mode-panel .btn {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
 }
 .ant-panel-reduced .ant-data-panel,
 .ant-panel-reduced .ant-data-panel + hr,
