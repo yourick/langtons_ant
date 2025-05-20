@@ -1,14 +1,18 @@
-import { useState, useRef } from 'react';
+import { useRef, useContext } from 'react';
+import { DataContext } from '../contexts/DataContext';
+import { ScaleContext } from '../contexts/ScaleContext';
 import ControlPanel from './ControlPanel/ControlPanel';
 import './Layout.css';
 
-function Layout({ dummyCells, ant, children }) {
-    const [scale, setScale] = useState(1);
+function Layout({ ant, children }) {
     const viewport = useRef(null);
+
+    const {dummyCells} = useContext(DataContext);
+    const {scale} = useContext(ScaleContext);
 
     return (
         <div className="ant-base">
-            <ControlPanel scale={scale} onSetScale={setScale} viewport={viewport} ant={ant}/>
+            <ControlPanel viewport={viewport} ant={ant}/>
 
             <div ref={viewport} className="ant-viewport">
                 <div className="ant-holder">

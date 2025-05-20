@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { Stack } from 'react-bootstrap';
-import { DataContext } from '../../DataContext';
+import { DataContext } from '../../contexts/DataContext';
 import ModePanel from './ModePanel';
 import ScalePanel from './ScalePanel';
 import FocusPanel from './FocusPanel';
@@ -12,7 +12,7 @@ import AddStepPanel from './AddStepPanel';
 import move from '../../utils/move';
 import './ControlPanel.css';
 
-function ControlPanel({ scale, onSetScale, viewport, ant }) {
+function ControlPanel({ viewport, ant }) {
     const [isHidden, setIsHidden] = useState(false);
     const [isReduced, setIsReduced] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
@@ -34,7 +34,7 @@ function ControlPanel({ scale, onSetScale, viewport, ant }) {
     return (
         <div className={panelClassName}>
             <ModePanel isHidden={isHidden} onSetIsHidden={setIsHidden} isReduced={isReduced} onSetIsReduced={setIsReduced}/>
-            <ScalePanel scale={scale} onSetScale={onSetScale}/>
+            <ScalePanel/>
             <FocusPanel viewport={viewport} ant={ant}/>
             <hr/>
             <DefaultDataPanel isRunning={isRunning}/>

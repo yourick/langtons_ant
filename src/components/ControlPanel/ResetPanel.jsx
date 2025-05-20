@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
-import { DataContext } from '../../DataContext';
+import { DataContext } from '../../contexts/DataContext';
 import dataList from '../../data';
 
 function ResetPanel({ isRunning }) {

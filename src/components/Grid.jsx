@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { DataContext } from '../DataContext';
+import { DataContext } from '../contexts/DataContext';
 import './Grid.css';
 import ladybug from '/ladybug.svg';
 
-function Grid({ dummyCells, ant }) {
-    const {data} = useContext(DataContext);
+function Grid({ ant }) {
+    const {data, dummyCells} = useContext(DataContext);
 
     let {grid, posX, posY, dir} = data;
 

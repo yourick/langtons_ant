@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { Stack, Form, Button } from 'react-bootstrap';
-import { DataContext } from '../../DataContext';
+import { DataContext } from '../../contexts/DataContext';
 import dataList from '../../data';
 
 function MoveToStepPanel({ onHandleMove, isRunning }) {
