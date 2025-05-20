@@ -12,7 +12,7 @@ import AddStepPanel from './AddStepPanel';
 import move from '../../utils/move';
 import './ControlPanel.css';
 
-function ControlPanel({ viewport, ant }) {
+function ControlPanel({ viewportRef, runnerRef }) {
     const [isHidden, setIsHidden] = useState(false);
     const [isReduced, setIsReduced] = useState(false);
     const [isRunning, setIsRunning] = useState(false);
@@ -35,7 +35,7 @@ function ControlPanel({ viewport, ant }) {
         <div className={panelClassName}>
             <ModePanel isHidden={isHidden} onSetIsHidden={setIsHidden} isReduced={isReduced} onSetIsReduced={setIsReduced}/>
             <ScalePanel/>
-            <FocusPanel viewport={viewport} ant={ant}/>
+            <FocusPanel viewportRef={viewportRef} runnerRef={runnerRef}/>
             <hr/>
             <DefaultDataPanel isRunning={isRunning}/>
             <hr/>

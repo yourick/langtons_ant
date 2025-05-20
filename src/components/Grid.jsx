@@ -3,7 +3,7 @@ import { DataContext } from '../contexts/DataContext';
 import './Grid.css';
 import ladybug from '/ladybug.svg';
 
-function Grid({ ant }) {
+function Grid({ runnerRef }) {
     const {data, dummyCells} = useContext(DataContext);
 
     let {grid, posX, posY, dir} = data;
@@ -26,7 +26,7 @@ function Grid({ ant }) {
                             return (
                                 <div key={x} className={'ant-grid-cell' + (cell === 1 ? ' ant-grid-cell-inverted' : '')}>
                                     {y === posY && x === posX ? (
-                                        <div ref={ant} className="ant-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
+                                        <div ref={runnerRef} className="ant-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
                                             <img src={ladybug} alt="Ladybug"/>
                                         </div>
                                     ) : (

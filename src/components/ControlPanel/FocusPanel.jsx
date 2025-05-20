@@ -3,11 +3,11 @@ import { Button } from 'react-bootstrap';
 import ladybug from '/ladybug.svg';
 import crosshair from '../../assets/images/crosshair.svg';
 
-function FocusPanel({ viewport, ant }) {
+function FocusPanel({ viewportRef, runnerRef }) {
     const [offset, setOffset] = useState(0);
 
     useEffect(function() {
-        const el = viewport.current;
+        const el = viewportRef.current;
 
         const resizeObserver = new ResizeObserver(() => {
             const newOffset = el.offsetWidth - el.clientWidth;
@@ -19,10 +19,10 @@ function FocusPanel({ viewport, ant }) {
         return function() {
             resizeObserver.unobserve(el);
         };
-    }, [viewport]);
+    }, [viewportRef]);
 
     function handleClick() {
-        ant.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        runnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
     }
 
     return (

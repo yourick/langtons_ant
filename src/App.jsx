@@ -5,13 +5,13 @@ import Layout from './components/Layout';
 import Grid from './components/Grid';
 
 function App() {
-    const ant = useRef(null);
+    const runnerRef = useRef(null);
 
     return (
         <DataProvider>
             <ScaleProvider>
-                <Layout ant={ant}>
-                    <Grid ant={ant}/>
+                <Layout runnerRef={runnerRef}>
+                    <Grid runnerRef={runnerRef}/>
                 </Layout>
             </ScaleProvider>
         </DataProvider>
