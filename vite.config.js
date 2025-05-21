@@ -7,7 +7,5 @@ export default defineConfig({
   server: {
     host: true
   },
-  build: {
-    base: '/langtons_ant/'
-  },
+  base: '/langtons_ant/'
 })
