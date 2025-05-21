@@ -26,7 +26,7 @@ function Grid({ runnerRef }) {
                             return (
                                 <div key={x} className={'ant-grid-cell' + (cell === 1 ? ' ant-grid-cell-inverted' : '')}>
                                     {y === posY && x === posX ? (
-                                        <div ref={runnerRef} className="ant-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
+                                        <div ref={runnerRef} className="ant-runner-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
                                             <img src={ladybug} alt="Ladybug"/>
                                         </div>
                                     ) : (

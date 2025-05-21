@@ -19,7 +19,7 @@ function FocusPanel({ viewportRef, runnerRef }) {
         return function() {
             resizeObserver.unobserve(el);
         };
-    }, [viewportRef]);
+    }, [viewportRef.current]);
 
     function handleClick() {
         runnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
