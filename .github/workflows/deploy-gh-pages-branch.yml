@@ -1,8 +1,7 @@
-# Workflow for building and deploying site to GitHub Pages
-name: Deploy site to GitHub Pages (gh-pages branch)
+# Workflow for building and deploying site to GitHub Pages using gh-pages branch
+name: Build and deploy project to GitHub Pages (gh-pages branch)
 
 on:
-
   # Runs on pushes targeting the default branch
   push:
     branches:
@@ -12,12 +11,10 @@ on:
   workflow_dispatch:
 
 jobs:
-
   # Build-deploy job
   build-deploy:
     runs-on: ubuntu-latest 
     steps:
-
       # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v3
