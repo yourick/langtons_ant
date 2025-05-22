@@ -1,26 +1,19 @@
-import { useRef, useContext } from 'react';
-import { DataContext } from '../contexts/DataContext';
-import { ScaleContext } from '../contexts/ScaleContext';
+import { useRef } from 'react';
 import ControlPanel from './ControlPanel/ControlPanel';
+import Board from './Board/Board';
+import Grid from './Board/Grid';
 import './Layout.css';
 
-function Layout({ runnerRef, children }) {
-    const viewportRef = useRef(null);
-
-    const {dummyCells} = useContext(DataContext);
-    const {scale} = useContext(ScaleContext);
+function Layout() {
+    const runnerRef = useRef(null);
 
     return (
         <div className="ant-base">
-            <ControlPanel viewportRef={viewportRef} runnerRef={runnerRef}/>
+            <ControlPanel/>
 
-            <div ref={viewportRef} className="ant-viewport">
-                <div className="ant-holder">
-                    <div className={'ant-board' + (dummyCells > 0 ? ' ant-board-dummy-cells' : '')} style={{fontSize: scale + 'em'}}>
-                        {children}
-                    </div>
-                </div>
-            </div>
+            <Board runnerRef={runnerRef}>
+                <Grid runnerRef={runnerRef}/>
+            </Board>
         </div>
     );
 }

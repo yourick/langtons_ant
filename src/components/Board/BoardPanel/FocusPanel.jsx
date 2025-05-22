@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import ladybug from '/ladybug.svg';
-import crosshair from '../../assets/images/crosshair.svg';
+import crosshair from '../../../assets/images/crosshair.svg';
 
 function FocusPanel({ viewportRef, runnerRef }) {
     const [offset, setOffset] = useState(0);

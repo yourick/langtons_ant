@@ -20,61 +20,7 @@
 }
 /* END ant panel base */
 
-/* START ant scale subpanel */
-.ant-scale-panel {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 1rem;
-}
-.ant-scale-panel .btn {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-}
-.ant-scale-buttons-panel .btn {
-    min-width: 2.375rem;
-}
-.ant-scale-number {
-    font-size: 0.875rem;
-    text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
-    color: var(--bs-white);
-}
-/* END ant scale subpanel */
-
-/* START ant focus subpanel */
-.ant-focus-panel {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    padding: 1rem;
-}
-.ant-focus-panel .btn {
-    position: relative;
-    padding: 0.125rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-}
-.ant-focus-panel .ant-crosshair-icon {
-    display: block;
-    width: 2rem;
-    height: 2rem;
-}
-.ant-focus-panel .ant-runner-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 1.125rem;
-    height: 1.125rem;
-    margin: -0.5625rem 0 0 -0.5625rem;
-}
-.ant-focus-panel .ant-crosshair-icon img,
-.ant-focus-panel .ant-runner-icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-/* END ant focus subpanel */
-
-/* START ant other subpanels */
+/* START ant subpanels */
 .ant-data-panel,
 .ant-action-panel,
 .ant-main-panel,
@@ -93,7 +39,7 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
-/* END ant other subpanels */
+/* END ant subpanels */
 
 /* START ant panel modifiers */
 .ant-panel-hidden hr,

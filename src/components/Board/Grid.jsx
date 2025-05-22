@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DataContext } from '../contexts/DataContext';
+import { DataContext } from '../../contexts/DataContext';
 import './Grid.css';
 import ladybug from '/ladybug.svg';
 
