@@ -1,5 +1,5 @@
-# Workflow for building and deploying site to GitHub Pages using gh-pages branch
-name: Build and deploy project to GitHub Pages (gh-pages branch)
+# Workflow for building and deploying project to GitHub Pages using gh-pages branch
+name: Deploy to GitHub Pages (gh-pages branch)
 
 on:
   # Runs on pushes targeting the default branch
