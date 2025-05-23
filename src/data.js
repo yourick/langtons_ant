@@ -55,6 +55,18 @@ const dataList = [
         step: 0
     },
     {
+        title: 'Great chaos (3x3)',
+        grid: [ /* ~44000 steps to highway */
+            [1, 0, 1],
+            [1, 0, 1],
+            [1, 0, 1]
+        ],
+        posX: 1,
+        posY: 1,
+        dir: 0,
+        step: 0
+    },
+    {
         title: 'Break the wall (27x27)',
         grid: [ /* ~700 steps to first highway, ~2800 steps to second highway */
             new Array(27).fill(1),

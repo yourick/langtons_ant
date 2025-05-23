@@ -28,6 +28,7 @@ function Grid({ runnerRef }) {
                                     {y === posY && x === posX ? (
                                         <div ref={runnerRef} className="ant-runner-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
                                             <img src={ladybug} alt="Ladybug"/>
+                                            <span className="ant-runner-icon-mark"></span>
                                         </div>
                                     ) : (
                                         ''

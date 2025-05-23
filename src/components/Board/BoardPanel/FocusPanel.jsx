@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import ladybug from '/ladybug.svg';
 import crosshair from '../../../assets/images/crosshair.svg';
 
-function FocusPanel({ viewportRef, runnerRef }) {
+function FocusPanel({ onSetIsFocused, viewportRef, runnerRef }) {
     const [offset, setOffset] = useState(0);
+    const timerId = useRef(null);
 
     useEffect(function() {
         const el = viewportRef.current;
@@ -23,6 +24,11 @@ function FocusPanel({ viewportRef, runnerRef }) {
 
     function handleClick() {
         runnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        clearTimeout(timerId.current);
+        onSetIsFocused(true);
+        timerId.current = setTimeout(function() {
+            onSetIsFocused(false);
+        }, 1500);
     }
 
     return (
