@@ -1,9 +1,15 @@
 import { useContext } from 'react';
 import { DataContext } from '../../contexts/DataContext';
-import './Grid.css';
+import { Stage, Layer, Rect, Image } from 'react-konva';
+import useImage from 'use-image';
 import ladybug from '/ladybug.svg';
 
-function Grid({ runnerRef }) {
+const URLImage = ({ src, ...rest }) => {
+    const [image] = useImage(src, 'anonymous');
+    return <Image image={image} {...rest} />;
+};
+
+function Grid({ size, gap, isFocused }) {
     const {data, dummyCells} = useContext(DataContext);
 
     let {grid, posX, posY, dir} = data;
@@ -17,29 +23,39 @@ function Grid({ runnerRef }) {
         posY += dummyCells;
     }
 
+    const width = grid[0].length * (size + gap) + gap;
+    const height = grid.length * (size + gap) + gap;
+
     return (
-        <div className="ant-grid">
-            {grid.map((row, y) => {
-                return (
-                    <div key={y} className="ant-grid-row">
-                        {row.map((cell, x) => {
-                            return (
-                                <div key={x} className={'ant-grid-cell' + (cell === 1 ? ' ant-grid-cell-inverted' : '')}>
-                                    {y === posY && x === posX ? (
-                                        <div ref={runnerRef} className="ant-runner-icon" style={{transform: `rotate(${dir * 90}deg)`}}>
-                                            <img src={ladybug} alt="Ladybug"/>
-                                            <span className="ant-runner-icon-mark"></span>
-                                        </div>
-                                    ) : (
-                                        ''
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
-                );
-            })}
-        </div>
+        <Stage width={width} height={height}>
+            <Layer>
+                <Rect x={0} y={0} width={width} height={height} fill="#ced4da"/>
+                {grid.map((row, y) =>
+                    row.map((cell, x) => (
+                        <Rect
+                            key={`${y}-${x}`}
+                            x={x * (size + gap) + gap}
+                            y={y * (size + gap) + gap}
+                            width={size}
+                            height={size}
+                            fill={cell === 1 ? '#ffffff' : '#6c757d'}
+                        />
+                    ))
+                )}
+                <URLImage 
+                    src={ladybug}
+                    x={posX * (size + gap) + gap + size / 2}
+                    y={posY * (size + gap) + gap + size / 2}
+                    width={size * 0.9}
+                    height={size * 0.9}
+                    rotation={dir * 90}
+                    offset={{
+                        x: size * 0.9 / 2,
+                        y: size * 0.9 / 2
+                    }}
+                />
+            </Layer>
+        </Stage>
     );
 }
 

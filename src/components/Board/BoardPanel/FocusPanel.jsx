@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ladybug from '/ladybug.svg';
 import crosshair from '../../../assets/images/crosshair.svg';
 
-function FocusPanel({ onSetIsFocused, viewportRef, runnerRef }) {
+function FocusPanel({ onSetIsFocused, viewportRef, offsetX, offsetY }) {
     const [offset, setOffset] = useState(0);
     const timerId = useRef(null);
 
@@ -23,7 +23,8 @@ function FocusPanel({ onSetIsFocused, viewportRef, runnerRef }) {
     }, [viewportRef.current]);
 
     function handleClick() {
-        runnerRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        const el = viewportRef.current;
+        el.scrollTo({ top: offsetY - el.clientHeight / 2, left: offsetX - el.clientWidth / 2, behavior: 'smooth' });
         clearTimeout(timerId.current);
         onSetIsFocused(true);
         timerId.current = setTimeout(function() {
