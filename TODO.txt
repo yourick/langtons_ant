@@ -1,0 +1,7 @@
+Tasks:
+1) Make it possible to choose a base color for the board. 
+2) Implement drag-and-scroll functionality for the viewport on desktop.
+3) Rearrange/redesign control panel to have it more compact. 
+4) Implement control for ant speed.
+5) Upgrade functionality to multicolor ant.
+6) Upgrade functionality to several ants.
